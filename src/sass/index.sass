@@ -1,0 +1,286 @@
+@import "loader.sass"  
+@import "nothing.sass"
+
+@font-face 
+    font-family: "Comfortaa-Light"
+    src: url("fonts/Comfortaa-Light.ttf") format("truetype")
+    font-weight: normal
+    font-style: normal
+@font-face 
+    font-family: "Comfortaa-Medium"
+    src: url("fonts/Comfortaa-Medium.ttf") format("truetype")
+    font-weight: normal
+    font-style: normal
+html
+    font-size: 62.5%
+    font-family: "Comfortaa-Medium"
+    background: rgb(0, 64, 107)
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+p
+    font-size: 1rem
+h1
+    font-size: 3rem
+h2
+    font-size: 2rem
+h3 
+    font-size: 1.5rem
+
+.App
+    text-align: center
+    width: 100%
+    height: 100vh
+    background-color: #d1fff4
+.nav
+    position: relative
+    width: 100%
+    height: 13vh
+    background: rgb(0, 75, 146)
+    background: url(img/movfon-01.png) right / cover no-repeat
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    box-shadow: 0px 3px 5px black
+    z-index: 2
+    &__logo
+        width: 30rem
+        height: 10rem
+        display: flex
+        align-items: center
+        justify-content: center
+        background: url(img/MovLogo-01.svg) center / cover no-repeat
+    &__h1
+        text-align: center
+        font-size: 3rem
+        color: white
+        font-family: "Comfortaa-Light"
+
+
+.footer
+    width: 100%
+    height: 8vh
+    background: rgb(0, 64, 107)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    box-shadow: 0px -3px 5px black
+
+    &__logo
+        width: 21rem
+        height: 7rem
+        display: flex
+        align-items: center
+        justify-content: center
+        background: url(img/MovLogo-01.svg) center / cover no-repeat
+    p
+        font-size: 1.3rem
+        text-align: center
+        color: white
+        margin: 1rem
+        font-family: "Comfortaa-Light"
+    &__text
+        display: flex
+        align-items: center
+        flex-direction: column
+        a
+            text-decoration: none
+            color: white
+            font-size: 1.3rem
+.search
+    width: 100%
+    height: 6vh
+
+    &__box
+        width: 100%
+        height: 95%
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        position: relative
+
+
+    &__input
+        text-align: left
+        width: 95%
+        height: 3.5rem
+        margin-right: 5%
+        border: none
+        border-radius: 7px
+        outline: none
+        padding: 0.5rem
+        box-shadow: 0px 3px 5px black
+    &__btn
+        position: absolute
+        top: 0.7rem
+        width: 4rem
+        height: 4rem
+        border-radius: 50%
+        background: #005a70
+        color: white
+        border: none
+        display: inline-block
+        transition: All 0.1s
+        box-shadow: 0px 3px 5px black
+        &:hover
+            background: #007997
+            
+        &:active
+            scale: 95%
+            box-shadow: 0px 0px 2px black
+            background: #004455
+
+
+
+.nothing
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 50%
+    height: 10%  
+    h3
+        color: white
+        text-align: center  
+        font-size: 5rem
+        font-family: "Comfortaa-Light" 
+
+
+
+
+
+.content
+    width: 100%
+    min-height: 65vh
+    max-height: auto
+    background: rgb(0, 64, 107)
+    position: relative
+
+.boxcard
+    margin: 0 auto
+    width: 90%
+    height: auto
+    background: rgb(0, 64, 107)
+    padding: 1rem
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr))
+    grid-template-rows: repeat(2, 1fr)
+    grid-gap: 1rem 1rem
+
+
+.card
+    width: 20rem
+    height: 32.3rem
+    margin: 0.3rem
+    background: #dbe9ee
+    box-shadow: 2px 2px 4px black
+    padding: 0.4rem
+    position: relative
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: repeat(7, 1fr)
+    // justify-self: center
+    // align-self: center
+    &__poster
+        width: 100%
+        grid-column: 1/-1
+        grid-row: 1/6
+        background: #000
+        overflow: hidden
+    &__type
+        color: rgb(0, 64, 107)
+        grid-column: 1/4
+        grid-row: 6/7
+        font-size: 1.5rem
+        justify-self: start
+        align-self: center
+    &__title
+        color: rgb(0, 64, 107)
+        grid-column: 1/-1
+        grid-row: 7/8
+        font-size: 2rem
+        justify-self: start
+        align-self: center
+    &__year
+        color: rgb(0, 64, 107)
+        grid-column: 1/4
+        grid-row: 8/9
+        font-size: 1.5rem
+        justify-self: start
+        align-self: center
+    &__img
+        width: 100%  
+        transition: All .2s 
+        cursor: pointer
+        &:hover
+            position: absolute
+            width: 100%
+            top: 2rem
+            left: 0
+            scale: 115%
+            transition: All .2s
+            box-shadow: 0px 3px 5px black
+            z-index: 4
+
+
+
+.selectbar
+    display: flex
+    align-items: flex-end
+    width: 100%
+    height: 4vh
+    background: rgb(0, 64, 107)
+
+.select
+    &__boxsearch
+        width: 15%
+        height: 30px
+        margin-left: 5%
+        z-index: 3
+        
+
+        &__select
+            font-size: 2rem
+            color: white
+            
+
+    &__box
+        display: flex
+        width: 100%
+        flex-direction: column
+        align-content: flex-start
+        align-items: flex-start
+        padding: 1rem
+        background: rgb(0, 72, 121)
+        border-radius: 1rem
+        box-shadow: 0px 3px 5px black
+        label
+            color: white
+            margin-top: 2px
+            margin-bottom: 4px
+            font-size: 1.3rem
+            width: 100%
+            padding: 3px
+            &:hover
+                background: rgb(0, 97, 161)
+                border-radius: 5px
+            &:active
+                background: rgb(0, 38, 63)
+                border-radius: 5px
+                
+    &__input
+        display: none
+
+
+.searchcont
+    &__boxsearch
+        width: 40%
+        height: 30px
+        margin-left: 5%
+        z-index: 3
+        &__select
+            font-size: 2rem
+            color: white
