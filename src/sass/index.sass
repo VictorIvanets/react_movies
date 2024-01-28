@@ -183,6 +183,9 @@ h3
     display: grid
     grid-template-columns: repeat(6, 1fr)
     grid-template-rows: repeat(7, 1fr)
+    @media (max-width: 475px) 
+        width: 33rem
+        height: 55rem
     // justify-self: center
     // align-self: center
     &__poster
@@ -237,6 +240,7 @@ h3
     background: rgb(0, 64, 107)
     @media (max-width: 400px)  
         margin-top: 2rem
+
 
 .select
     &__boxsearch

@@ -265,6 +265,12 @@ h3 {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(7, 1fr);
 }
+@media (max-width: 475px) {
+  .card {
+    width: 33rem;
+    height: 55rem;
+  }
+}
 .card__poster {
   width: 100%;
   grid-column: 1/-1;
