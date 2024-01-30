@@ -1,29 +1,23 @@
-import React from "react"
+import React, {useState} from "react"
 
 
-class Search extends React.Component{
-state = {
-    search: "",
-    type: "",
-}
+function Search (props){
+const {searchMovies = Function.prototype} = props
+const [search, searchState] = useState("")
+const [type, typeState] = useState("all")
 
 
-handleKey = (event)=>{
+const handleKey = (event)=>{
     if (event.key === "Enter"){
-    this.props.searchMovies(this.state.search)
+    searchMovies(search, type)
     }
 }
 
 
-hendelFilter = (event)=>{
-    this.setState(()=>({type: event.target.dataset.type}), ()=>{
-        this.props.searchMovies(this.state.search, this.state.type)
-    })
- 
+const hendelFilter = (event)=>{
+    typeState(event.target.dataset.type)
+    searchMovies(search, event.target.dataset.type)
 }
-
-
-render(){
 
 
     return <div className="selectbar">
@@ -37,11 +31,11 @@ render(){
     className="search__input" 
     placeholder="назва фільму англійською" 
     type="search" 
-    value={this.state.search}
-    onChange={(e)=> this.setState({search: e.target.value})}
-    onKeyDown={this.handleKey}
+    value={search}
+    onChange={(e)=> searchState(e.target.value)}
+    onKeyDown={handleKey}
     />
-    <button onClick={()=>{this.props.searchMovies(this.state.search)}} className="search__btn">Ok</button>
+    <button onClick={()=>{searchMovies(search, type)}} className="search__btn">Ok</button>
    </div>
    </div>    
     </div>
@@ -56,8 +50,8 @@ render(){
     className="select__input" 
     type="radio" 
     data-type="all"
-    onChange={this.hendelFilter}
-    checked={this.state.type ==="all"}
+    onChange={hendelFilter}
+    checked={type ==="all"}
     />
     <label for="movser">Кіно та серіали</label>
 
@@ -66,8 +60,8 @@ render(){
     className="select__input" 
     type="radio" 
     data-type="movie"
-    onChange={this.hendelFilter}
-    checked={this.state.type ==="movie"}
+    onChange={hendelFilter}
+    checked={type ==="movie"}
     />
     <label for="mov">Кіно</label>
 
@@ -76,8 +70,8 @@ render(){
     className="select__input" 
     type="radio"
     data-type="series" 
-    onChange={this.hendelFilter}  
-    checked={this.state.type ==="series"}       
+    onChange={hendelFilter}  
+    checked={type ==="series"}       
     />
     <label for="serial">Серіали</label>
     
@@ -89,7 +83,7 @@ render(){
 </div>
 
     
-}
+
    }
    
    

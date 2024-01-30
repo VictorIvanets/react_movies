@@ -1,44 +1,43 @@
 import BoxCards from "./boxcards"
-import React from "react"
+import React, {useEffect, useState}from "react"
 import Preloader from "./preloader"
 import Search from "./search"
 
-class Main extends React.Component{
-    state = {
-        movies: [],
-        loading: true,
-    }
+function Main () {
 
-    componentDidMount(){
-    fetch("https://www.omdbapi.com/?apikey=12ea9b88&s=movies")
-    .then(response => response.json())
-    .then(data => this.setState({movies: data.Search, loading: false}))
-    .catch((err)=>{
-        console.error(err);
-        this.setState({loading: false})})
-    }
+let [movies, moviesSet] = useState("")
+let [loading, loadingSet] = useState(true)
 
 
-    searchMovies = (str, type = "all")=>{
-        this.setState({loading: true})
+    const searchMovies = (str, type = "all") => {
+        loadingSet(true)
         fetch(`https://www.omdbapi.com/?apikey=12ea9b88&s=${str}${type !== "all" ? `&type=${type}` : ""}`)
         .then(response => response.json())
-        .then(data => this.setState({movies: data.Search, loading: false}))
+        .then(data => {
+            moviesSet(data.Search)
+            loadingSet(false)
+        })
         .catch((err)=>{
-            console.error(err);
-            this.setState({loading: false})})
+            loadingSet(false)})
     }
 
+    useEffect(()=>{
+        fetch("https://www.omdbapi.com/?apikey=12ea9b88&s=movies")
+        .then(response => response.json())
+        .then(data => {
+            moviesSet(data.Search)
+            loadingSet(false)
+        })
+        .catch((err)=>{
+            loadingSet(false)})
+        }, [])
 
 
-    
-    render (){
 
-    const {movies, loading} = this.state
 
     return  <main className ="container content">
 
-    <div><Search searchMovies={this.searchMovies}/></div>
+    <div><Search searchMovies={searchMovies}/></div>
 
 
     {loading ? <div className="preloader"><Preloader/></div> 
@@ -48,7 +47,7 @@ class Main extends React.Component{
     </main>
   
 
-   }
+   
    }
    
    
