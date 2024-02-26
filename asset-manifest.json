@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react_movies/static/css/main.8765a7d0.css",
-    "main.js": "/react_movies/static/js/main.8f8ea7da.js",
+    "main.css": "/react_movies/static/css/main.c3ff878c.css",
+    "main.js": "/react_movies/static/js/main.d67d53b4.js",
     "static/media/Comfortaa-Medium.ttf": "/react_movies/static/media/Comfortaa-Medium.e26e46e9ed19fd463a58.ttf",
     "static/media/Comfortaa-Light.ttf": "/react_movies/static/media/Comfortaa-Light.8d7e182e392e617a868f.ttf",
     "static/media/movfon-01.png": "/react_movies/static/media/movfon-01.b15814bba0618bf9205a.png",
     "static/media/MovLogo-01.svg": "/react_movies/static/media/MovLogo-01.cc293ee1daf117443712.svg",
     "index.html": "/react_movies/index.html",
-    "main.8765a7d0.css.map": "/react_movies/static/css/main.8765a7d0.css.map",
-    "main.8f8ea7da.js.map": "/react_movies/static/js/main.8f8ea7da.js.map"
+    "main.c3ff878c.css.map": "/react_movies/static/css/main.c3ff878c.css.map",
+    "main.d67d53b4.js.map": "/react_movies/static/js/main.d67d53b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.8765a7d0.css",
-    "static/js/main.8f8ea7da.js"
+    "static/css/main.c3ff878c.css",
+    "static/js/main.d67d53b4.js"
   ]
 }
