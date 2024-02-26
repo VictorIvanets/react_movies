@@ -40,7 +40,7 @@ function StringToUppercase(n) {
     </div>
 
 <div className="info__content">
-        <h1 className="info__content__h1">{StringToUppercase(`${Title}`)}</h1>
+        {moreInfo ? <h1 className="info__content__h1"> {StringToUppercase(`${Title}`)}</h1>: <h1 style={{background: "red", color: "white"}}>Dowload...... please wait</h1>}
         <h2 className="info__content__h2">Year: {Year}</h2>
         <h2 className="info__content__h2">Country: {Country}</h2>
         <div className="info__content__text">Genre: {Genre}</div>
