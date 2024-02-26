@@ -1,3 +1,7 @@
+import React, {useState}from "react"
+import MoviesInfo from "./moviesinfo"
+
+
 function Card (props){
 
 
@@ -6,18 +10,20 @@ function Card (props){
         Year: year,
         Type: type,
         imdbID: id,
-        Poster: poster
+        Poster: poster,
+        addInfo = Function.prototype,
     } = props
 
+  
 
-
-    return   <div id={id} className ="card">
+    return   <div className ="card">
     
     <div className="card__poster">
 
 { poster === 'N/A' ?
     <img className= "card__img" src={`https://via.placeholder.com/200x280?text=${title}`} alt="poster" /> :
-   <img className= "card__img" src={poster} alt="poster" />
+    <img onClick={()=> addInfo(id)} className= "card__img" src={poster} alt="poster" />
+
 }
    </div>
 
@@ -26,6 +32,8 @@ function Card (props){
    <div className="card__type">{type}</div>
    <div className="card__title">{title}</div>
    <div className="card__year">{year}</div>
+
+   
 
    </div>
    

@@ -2,16 +2,19 @@ import Card from "./card"
 
 function BoxCards (props){
 
-    const {movies = []} = props
-
+    const {movies = [], 
+        addInfo = Function.prototype,
+        // nextBtn = Function.prototype
+    } = props
 
 
 
     return   <div>
     <div className ="boxcard">
-    {movies.length ? movies.map(movie => (
-
-        <Card key={movie.imdbID}{...movie}/>
+        
+    {movies.length ? movies.map(movie => (<Card key={movie.imdbID}{...movie} 
+    addInfo={addInfo} 
+    />
 
     )) : <div className="nothing">
 
@@ -25,6 +28,7 @@ function BoxCards (props){
         <h3>Нічого не знайдено</h3>
         </div>
     }
+ 
     </div>
    </div>
    

@@ -34,9 +34,9 @@ h3
     height: 100vh
     background-color: #d1fff4
 .nav
-    position: relative
+    position: fixed
     width: 100%
-    height: 13vh
+    height: 8rem
     background: rgb(0, 75, 146)
     background: url(img/movfon-01.png) right / cover no-repeat
     display: flex
@@ -44,14 +44,15 @@ h3
     justify-content: space-between
     flex-wrap: wrap
     box-shadow: 0px 3px 5px black
-    z-index: 2
+    z-index: 5
     &__logo
         width: 30rem
-        height: 10rem
+        height: 110%
         display: flex
         align-items: center
         justify-content: center
         background: url(img/MovLogo-01.svg) center / cover no-repeat
+        scale: 80%
     &__h1
         text-align: center
         font-size: 3rem
@@ -61,13 +62,16 @@ h3
 
 .footer
     width: 100%
-    height: 8vh
+    height: 7rem
     background: rgb(0, 64, 107)
     display: flex
     align-items: center
     justify-content: space-between
     flex-wrap: wrap
     box-shadow: 0px -3px 5px black
+    position: fixed
+    bottom: 0rem
+    z-index: 8
 
     &__logo
         width: 21rem
@@ -127,12 +131,49 @@ h3
         box-shadow: 0px 3px 5px black
         &:hover
             background: #007997
+    &__btn2
+        position: absolute
+        bottom: -50%
+        left: 83%
+        width: 4rem
+        height: 4rem
+        border-radius: 50%
+        background: #005a70
+        color: white
+        border: none
+        display: inline-block
+        transition: All 0.1s
+        box-shadow: 0px 3px 5px black
+        z-index: 20
+        &:hover
+            background: #007997
             
         &:active
             scale: 95%
             box-shadow: 0px 0px 2px black
             background: #004455
+    &__btn3
+        position: absolute
+        bottom: -50%
+        left: 74%
+        width: 4rem
+        height: 4rem
+        border-radius: 50%
+        background: #005a70
+        color: white
+        border: none
+        display: inline-block
+        transition: All 0.1s
+        box-shadow: 0px 3px 5px black
+        z-index: 10
 
+        &:hover
+            background: #007997
+            
+        &:active
+            scale: 95%
+            box-shadow: 0px 0px 2px black
+            background: #004455
 
 
 .nothing
@@ -154,15 +195,17 @@ h3
 
 .content
     width: 100%
-    min-height: 65vh
+    min-height: 78vh
     max-height: auto
     background: rgb(0, 64, 107)
     position: relative
 
 .boxcard
+    position: relative
+    top: 11rem
     margin: 0 auto
-    width: 90%
-    height: auto
+    width: 80%
+    height: 80%
     background: rgb(0, 64, 107)
     padding: 1rem
     display: grid
@@ -170,6 +213,7 @@ h3
     grid-template-rows: repeat(2, 1fr)
     grid-gap: 1rem 1rem
     justify-items: center
+    margin-bottom: 20rem
 
 
 .card
@@ -222,9 +266,8 @@ h3
         &:hover
             position: absolute
             width: 100%
-            top: 2rem
+            top: 0
             left: 0
-            scale: 115%
             transition: All .2s
             box-shadow: 0px 3px 5px black
             z-index: 4
@@ -232,14 +275,15 @@ h3
 
 
 .selectbar
+    position: fixed
+    top: 7.1rem
+    z-index: 4
     display: flex
     align-items: flex-end
     width: 100%
-    height: 4vh
+    height: 3rem
     margin-top: 1rem
     background: rgb(0, 64, 107)
-    @media (max-width: 400px)  
-        margin-top: 2rem
 
 
 .select
@@ -297,3 +341,111 @@ h3
         &__select
             font-size: 2rem
             color: white
+
+.info
+    width: 90%
+    max-height: min-content
+    padding: 2rem
+    position: fixed
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    color: white
+    background: #ffffff
+    z-index: 10
+    border: 0.1rem solid rgb(0, 97, 161)
+    border-radius: 1rem
+    box-shadow: 0px 3px 5px black
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: 1fr min-content
+    justify-items: start
+    justify-content: start
+    align-content: center
+    overflow: hidden
+
+
+    @media (max-width: 570px) 
+        display: block
+        // top: 33rem
+        margin: 0 auto
+
+    &__poster
+        height: 100%
+        grid-column: 1/2
+        grid-row: 1/-1
+        @media (max-width: 570px)
+            display: flex
+            justify-content: center
+
+        &__img
+            width: 100%
+            height: auto
+            @media (max-width: 570px) 
+                width: 80%
+
+    &__content
+        grid-column: 2/-1
+        width: 100%
+        padding: 1rem
+        color: black
+        font-size: 1.7rem
+        display: flex
+        flex-direction: column
+        &__h1
+            margin-bottom: 1.2rem
+            @media (max-width: 570px) 
+                font-size: 1.5rem
+        &__h2
+            margin-bottom: 0.8rem
+            @media (max-width: 570px) 
+                font-size: 1rem
+            &__rating
+                background: #aca000
+                border-radius: 50%
+                color: white
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 10rem
+                height: 10rem
+                text-align: center
+                box-shadow: 0px 3px 5px black
+                font-size: 2.1rem
+                @media (max-width: 570px) 
+                    font-size: 1.5rem
+                    width: 6rem
+                    height: 6rem
+
+
+                // clip-path: polygon(50% 0%, 65% 31%, 98% 35%, 73% 59%, 79% 91%, 50% 78%, 21% 91%, 29% 59%, 2% 35%, 37% 31%)
+
+
+        &__text
+            margin-bottom: 0.8rem
+            @media (max-width: 570px) 
+                font-size: 1rem
+                margin-bottom: 0.5rem
+            
+        &__close
+            text-align: right
+            width: 7rem
+            height: 7rem
+            background: #630000
+            border-radius: 50%
+            color: white
+            display: flex
+            justify-content: center
+            align-items: center
+            position: absolute
+            bottom: -2rem
+            right: -1rem
+            overflow: hidden
+            font-size: 7rem
+            cursor: pointer
+
+        
+
+
+        // @media (max-width: 600px) 
+        //     width: 50%
