@@ -15,7 +15,7 @@ let [moreInfo, moreInfoSet] = useState("")
 
 const addInfo = (id)=> {
 
-        fetch(`http://www.omdbapi.com/?apikey=12ea9b88&i=${id}`)
+        fetch(`https://www.omdbapi.com/?apikey=12ea9b88&i=${id}`)
         .then(response => response.json())
         .then(data => {
             moreInfoSet(data)
